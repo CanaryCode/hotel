@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="486.0" prefWidth="904.0" stylesheets="@../styles/estilo.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dam.gestionhotelera.controladores.ControladorCheckIn">
+   <children>
+      <GridPane layoutX="20.0" layoutY="54.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+        <columnConstraints>
+          <ColumnConstraints />
+          <ColumnConstraints hgrow="SOMETIMES" />
+            <ColumnConstraints hgrow="SOMETIMES" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label styleClass="normal" text="S. Apellido:" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label styleClass="normal" text="Tel. Fijo:" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Label styleClass="normal" text="Tel. Móvil:" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Label styleClass="normal" text="N. Pasaporte:" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+            <Label styleClass="normal" text="N. Reserva:" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <Label styleClass="normal" text="F. Nacimiento:" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label styleClass="normal" text="Categoría:" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+            <Label styleClass="normal" text="Pensión:" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+            <Label styleClass="normal" text="Nombre:" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label styleClass="normal" text="P. Apellido:" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="textFieldNombre" promptText="Obligatorio" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <TextField fx:id="textFieldTelMovil" promptText="Recomendado" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+            <TextField fx:id="textFieldTelFijo" promptText="Recomendado" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+            <TextField fx:id="textFieldSegundoApellido" promptText="Recomendado" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <TextField fx:id="textFieldPrimerApellido" promptText="Obligatorio" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <TextField fx:id="textFieldNumReserva" promptText="Obligatorio (si existe)" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+            <TextField fx:id="textFieldNumPasaporte" promptText="Obligatorio (extracomunitarios)" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+            <DatePicker promptText="Obligatorio" GridPane.columnIndex="2" GridPane.rowIndex="6">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></DatePicker>
+            <TextField fx:id="textFieldDni" promptText="Obligatorio" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Label styleClass="normal" text="Dni:" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <ComboBox fx:id="comboBoxCategoria" prefHeight="25.0" prefWidth="173.0" promptText="Obligatorio" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+            <ComboBox fx:id="comboBoxPension" prefHeight="25.0" prefWidth="172.0" promptText="Obligatorio" GridPane.columnIndex="2" GridPane.rowIndex="12" />
+            <Label styleClass="normal" text="Sexo:" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <HBox GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <children>
+                  <RadioButton mnemonicParsing="false" prefHeight="20.0" prefWidth="69.0" selected="true" text="H" GridPane.columnIndex="2">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="sexo" />
+                     </toggleGroup>
+                     <HBox.margin>
+                        <Insets right="60.0" />
+                     </HBox.margin>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" text="M" toggleGroup="$sexo" GridPane.columnIndex="2" />
+               </children>
+            </HBox>
+            <Label styleClass="normal" text="Habitacion:" GridPane.columnIndex="1" />
+            <ComboBox fx:id="comboBoxHabitacion" prefHeight="25.0" prefWidth="173.0" promptText="Obligatorio" GridPane.columnIndex="2" />
+         </children>
+      </GridPane>
+      <GridPane layoutX="330.0" layoutY="54.0" AnchorPane.topAnchor="20.0">
+         <children>
+            <Label styleClass="normal" text="Calle:" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label styleClass="normal" text="Bloque:" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label styleClass="normal" text="Escalera:" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Label styleClass="normal" text="Safe:" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <Label styleClass="normal" text="Via:" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Label styleClass="normal" text="Número:" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label styleClass="normal" text="Cama Extra:" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+            <Label styleClass="normal" text="Mesa:" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+            <Label styleClass="normal" text="Provincia:" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label styleClass="normal" text="Ciudad" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="textFieldProvincia" promptText="Recomendado" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <TextField fx:id="textFieldEscalera" promptText="Opcional" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+            <TextField fx:id="textFieldBloque" promptText="Opcional" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+            <TextField fx:id="textFieldCalle" promptText="Recomendado" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <TextField fx:id="textFieldCiudad" promptText="Obligatorio" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <TextField fx:id="textFieldVia" promptText="Opcional" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+            <Label styleClass="normal" text="País:" GridPane.columnIndex="1" />
+            <ComboBox fx:id="comboBoxMesa" prefWidth="150.0" promptText="Recomendado" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+            <Label styleClass="normal" text="Código postal:" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="textFieldCodigoPostal" promptText="Obligatorio" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <HBox GridPane.columnIndex="2" GridPane.rowIndex="10">
+               <children>
+                  <RadioButton mnemonicParsing="false" selected="true" text="si" GridPane.columnIndex="2">
+                     <HBox.margin>
+                        <Insets right="60.0" />
+                     </HBox.margin>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="extra" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" text="no" toggleGroup="$extra" GridPane.columnIndex="2" />
+               </children>
+            </HBox>
+            <HBox GridPane.columnIndex="2" GridPane.rowIndex="9">
+               <children>
+                  <RadioButton mnemonicParsing="false" selected="true" text="si" GridPane.columnIndex="2">
+                     <HBox.margin>
+                        <Insets right="60.0" />
+                     </HBox.margin>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="safe" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" text="no" toggleGroup="$safe" GridPane.columnIndex="2" />
+               </children>
+            </HBox>
+            <TextField fx:id="textFieldNumero" promptText="Recomendado" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <ComboBox fx:id="comboBoxPaises" prefWidth="150.0" promptText="Obligatorio" GridPane.columnIndex="2" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints hgrow="SOMETIMES" />
+            <ColumnConstraints hgrow="SOMETIMES" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <GridPane layoutX="600.0" layoutY="54.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+         <children>
+            <Label styleClass="normal" text="Categoría Ríu:" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label styleClass="normal" text="Exp. Pasaporte:" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label styleClass="normal" text="Ven. Pasaporte:" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <DatePicker promptText="Recomendado (extracomunitarios)" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></DatePicker>
+            <Label styleClass="normal" text="Turno:" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label styleClass="normal" text="Discapacitado:" GridPane.columnIndex="1" />
+            <HBox prefHeight="34.0" prefWidth="137.0" GridPane.columnIndex="2">
+               <children>
+                  <RadioButton mnemonicParsing="false" text="si" GridPane.columnIndex="2">
+                     <HBox.margin>
+                        <Insets right="60.0" />
+                     </HBox.margin>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="discapacitado" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" selected="true" text="no" toggleGroup="$discapacitado" GridPane.columnIndex="2" />
+               </children>
+            </HBox>
+            <DatePicker promptText="Obligatorio (extracomunitarios)" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></DatePicker>
+            <ComboBox fx:id="comboBoxTurno" prefHeight="25.0" prefWidth="174.0" promptText="Recomendado" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <ComboBox fx:id="comboBoxCategoriaRiu" prefHeight="25.0" prefWidth="174.0" promptText="Recomendado" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <ComboBox fx:id="comboBoxTratamiento" prefHeight="25.0" prefWidth="174.0" promptText="Recomendado" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <Label styleClass="normal" text="Tratamiento:" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints hgrow="SOMETIMES" />
+            <ColumnConstraints hgrow="SOMETIMES" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <Button layoutX="444.0" layoutY="404.0" mnemonicParsing="false" styleClass="button2" text="introducir" AnchorPane.bottomAnchor="20.0" />
+      <VBox layoutX="637.0" layoutY="211.0" prefHeight="275.0" prefWidth="270.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
+         <children>
+            <HBox prefHeight="140.0" prefWidth="278.0">
+               <children>
+                  <Pane id="habitacionFoto" prefHeight="100.0" prefWidth="150.0">
+                     <VBox.margin>
+                        <Insets left="40.0" right="40.0" />
+                     </VBox.margin>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <children>
+                        <ImageView fitHeight="140.0" fitWidth="150.0" layoutY="-5.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../images/habitacion.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Pane id="mesaFoto" prefHeight="100.0" prefWidth="150.0">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <children>
+                        <ImageView fitHeight="100.0" fitWidth="150.0" layoutY="-2.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../images/mesa.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane />
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets right="20.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>
