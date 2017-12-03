@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-dic-2017 19:12:03 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="dam.gestionhotelera.modelo.Pojos.Factura" table="factura" catalog="hotel" optimistic-lock="version">
+        <id name="idFactura" type="java.lang.Integer">
+            <column name="idFactura" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="cliente" class="dam.gestionhotelera.modelo.Pojos.Cliente" fetch="select">
+            <column name="Cliente_idCliente" />
+        </many-to-one>
+        <many-to-one name="empresa" class="dam.gestionhotelera.modelo.Pojos.Empresa" fetch="select">
+            <column name="Empresa_idEmpresa" />
+        </many-to-one>
+        <many-to-one name="oferta" class="dam.gestionhotelera.modelo.Pojos.Oferta" fetch="select">
+            <column name="Oferta_idOferta" />
+        </many-to-one>
+        <property name="fechaLiquidacion" type="date">
+            <column name="fechaLiquidacion" length="10" />
+        </property>
+        <property name="empleadoPersonaDni" type="string">
+            <column name="Empleado_Persona_Dni" length="20" />
+        </property>
+        <property name="concepto" type="string">
+            <column name="concepto" length="45" />
+        </property>
+        <property name="codigo" type="string">
+            <column name="codigo" length="45" />
+        </property>
+        <property name="propia" type="java.lang.Boolean">
+            <column name="propia" />
+        </property>
+        <set name="articulos" table="articulo" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="factura_idFactura" not-null="true" />
+            </key>
+            <one-to-many class="dam.gestionhotelera.modelo.Pojos.Articulo" />
+        </set>
+    </class>
+</hibernate-mapping>

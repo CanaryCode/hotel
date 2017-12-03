@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-dic-2017 19:12:03 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="dam.gestionhotelera.modelo.Pojos.HabitacionTieneCliente" table="habitacion_tiene_cliente" catalog="hotel" optimistic-lock="version">
+        <composite-id name="id" class="dam.gestionhotelera.modelo.Pojos.HabitacionTieneClienteId">
+            <key-property name="habitacionIdHabitacion" type="int">
+                <column name="habitacion_idHabitacion" />
+            </key-property>
+            <key-property name="clienteIdCliente" type="int">
+                <column name="cliente_idCliente" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="cliente" class="dam.gestionhotelera.modelo.Pojos.Cliente" update="false" insert="false" fetch="select">
+            <column name="cliente_idCliente" not-null="true" />
+        </many-to-one>
+        <many-to-one name="habitacion" class="dam.gestionhotelera.modelo.Pojos.Habitacion" update="false" insert="false" fetch="select">
+            <column name="habitacion_idHabitacion" not-null="true" />
+        </many-to-one>
+        <property name="fechaInicio" type="date">
+            <column name="fechaInicio" length="10" />
+        </property>
+        <property name="fechaFin" type="date">
+            <column name="fechaFin" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

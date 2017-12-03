@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-dic-2017 19:12:03 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="dam.gestionhotelera.modelo.Pojos.Reserva" table="reserva" catalog="hotel" optimistic-lock="version">
+        <id name="idReserva" type="java.lang.Integer">
+            <column name="idReserva" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="agencia" class="dam.gestionhotelera.modelo.Pojos.Agencia" fetch="select">
+            <column name="Agencia_id_Agencia" not-null="true" />
+        </many-to-one>
+        <many-to-one name="empleado" class="dam.gestionhotelera.modelo.Pojos.Empleado" fetch="select">
+            <column name="Empleado_idEmpleado" not-null="true" />
+        </many-to-one>
+        <many-to-one name="oferta" class="dam.gestionhotelera.modelo.Pojos.Oferta" fetch="select">
+            <column name="Oferta_idOferta" />
+        </many-to-one>
+        <property name="fechaInicio" type="date">
+            <column name="fechaInicio" length="10" not-null="true" />
+        </property>
+        <property name="pension" type="string">
+            <column name="pension" length="45" />
+        </property>
+        <property name="fechaFin" type="date">
+            <column name="fechaFin" length="10" not-null="true" />
+        </property>
+        <set name="clientes" table="cliente" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Reserva_idReserva" />
+            </key>
+            <one-to-many class="dam.gestionhotelera.modelo.Pojos.Cliente" />
+        </set>
+        <set name="parteTieneReservas" table="parte_tiene_reserva" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Reserva_idReserva" not-null="true" />
+            </key>
+            <one-to-many class="dam.gestionhotelera.modelo.Pojos.ParteTieneReserva" />
+        </set>
+    </class>
+</hibernate-mapping>

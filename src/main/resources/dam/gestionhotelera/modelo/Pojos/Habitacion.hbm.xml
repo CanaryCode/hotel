@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-dic-2017 19:12:03 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="dam.gestionhotelera.modelo.Pojos.Habitacion" table="habitacion" catalog="hotel" optimistic-lock="version">
+        <id name="idHabitacion" type="java.lang.Integer">
+            <column name="idHabitacion" />
+            <generator class="identity" />
+        </id>
+        <property name="numero" type="int">
+            <column name="numero" not-null="true" unique="true" />
+        </property>
+        <property name="estatus" type="string">
+            <column name="estatus" length="45" />
+        </property>
+        <property name="vista" type="string">
+            <column name="vista" length="45" />
+        </property>
+        <property name="ocupada" type="java.lang.Boolean">
+            <column name="ocupada" />
+        </property>
+        <property name="bloqueada" type="java.lang.Boolean">
+            <column name="bloqueada" />
+        </property>
+        <property name="foto" type="binary">
+            <column name="foto" />
+        </property>
+        <property name="camaExtra" type="java.lang.Boolean">
+            <column name="camaExtra" />
+        </property>
+        <property name="ocupantes" type="java.lang.Integer">
+            <column name="ocupantes" />
+        </property>
+        <property name="safe" type="java.lang.Boolean">
+            <column name="safe" />
+        </property>
+        <set name="habitacionTieneClientes" table="habitacion_tiene_cliente" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="habitacion_idHabitacion" not-null="true" />
+            </key>
+            <one-to-many class="dam.gestionhotelera.modelo.Pojos.HabitacionTieneCliente" />
+        </set>
+    </class>
+</hibernate-mapping>

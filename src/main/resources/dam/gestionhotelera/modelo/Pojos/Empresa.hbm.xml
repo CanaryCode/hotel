@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-dic-2017 19:12:03 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="dam.gestionhotelera.modelo.Pojos.Empresa" table="empresa" catalog="hotel" optimistic-lock="version">
+        <id name="idEmpresa" type="java.lang.Integer">
+            <column name="idEmpresa" />
+            <generator class="identity" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="nombre" length="45" />
+        </property>
+        <property name="razonSocial" type="string">
+            <column name="razonSocial" length="20" />
+        </property>
+        <property name="nif" type="string">
+            <column name="nif" length="20" unique="true" />
+        </property>
+        <property name="actividad" type="string">
+            <column name="actividad" length="45" />
+        </property>
+        <property name="tipo" type="string">
+            <column name="tipo" length="45" />
+        </property>
+        <property name="paginaWeb" type="string">
+            <column name="paginaWeb" length="45" />
+        </property>
+        <property name="correoElectronico" type="string">
+            <column name="correoElectronico" length="45" />
+        </property>
+        <property name="codigoPostal" type="string">
+            <column name="codigoPostal" length="20" />
+        </property>
+        <property name="calle" type="string">
+            <column name="calle" length="45" />
+        </property>
+        <property name="numero" type="java.lang.Integer">
+            <column name="numero" />
+        </property>
+        <property name="pais" type="string">
+            <column name="pais" length="45" />
+        </property>
+        <property name="ciudad" type="string">
+            <column name="ciudad" length="45" />
+        </property>
+        <property name="poblacion" type="string">
+            <column name="poblacion" length="45" />
+        </property>
+        <property name="via" type="string">
+            <column name="via" length="45" />
+        </property>
+        <property name="escalera" type="string">
+            <column name="escalera" length="45" />
+        </property>
+        <property name="bloque" type="string">
+            <column name="bloque" length="45" />
+        </property>
+        <property name="provincia" type="string">
+            <column name="provincia" length="45" />
+        </property>
+        <set name="proveedoreses" table="proveedores" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Empresa_idEmpresa" />
+            </key>
+            <one-to-many class="dam.gestionhotelera.modelo.Pojos.Proveedores" />
+        </set>
+        <set name="facturas" table="factura" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Empresa_idEmpresa" />
+            </key>
+            <one-to-many class="dam.gestionhotelera.modelo.Pojos.Factura" />
+        </set>
+        <set name="ofertaTieneEmpresas" table="oferta_tiene_empresa" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Empresa_idEmpresa" not-null="true" />
+            </key>
+            <one-to-many class="dam.gestionhotelera.modelo.Pojos.OfertaTieneEmpresa" />
+        </set>
+        <set name="parteTieneEmpresas" table="parte_tiene_empresa" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Empresa_idEmpresa" not-null="true" />
+            </key>
+            <one-to-many class="dam.gestionhotelera.modelo.Pojos.ParteTieneEmpresa" />
+        </set>
+        <set name="agencias" table="agencia" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Empresa_idEmpresa" not-null="true" />
+            </key>
+            <one-to-many class="dam.gestionhotelera.modelo.Pojos.Agencia" />
+        </set>
+    </class>
+</hibernate-mapping>

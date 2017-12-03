@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-dic-2017 19:12:03 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="dam.gestionhotelera.modelo.Pojos.Diatrabajo" table="diatrabajo" catalog="hotel" optimistic-lock="version">
+        <id name="diaTrabajo" type="java.lang.Integer">
+            <column name="DiaTrabajo" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="empleado" class="dam.gestionhotelera.modelo.Pojos.Empleado" fetch="select">
+            <column name="Empleado_idEmpleado" not-null="true" />
+        </many-to-one>
+        <property name="fecha" type="date">
+            <column name="fecha" length="10" not-null="true" />
+        </property>
+        <property name="horasTrabajadas" type="date">
+            <column name="horasTrabajadas" length="10" not-null="true" />
+        </property>
+        <property name="horaExtra" type="date">
+            <column name="horaExtra" length="10" />
+        </property>
+        <property name="concepto" type="string">
+            <column name="concepto" length="45" />
+        </property>
+        <property name="categoria" type="string">
+            <column name="categoria" length="45" />
+        </property>
+        <property name="sector" type="string">
+            <column name="sector" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

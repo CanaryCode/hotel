@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-dic-2017 19:12:03 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="dam.gestionhotelera.modelo.Pojos.Empleado" table="empleado" catalog="hotel" optimistic-lock="version">
+        <id name="idEmpleado" type="java.lang.Integer">
+            <column name="idEmpleado" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="departamento" class="dam.gestionhotelera.modelo.Pojos.Departamento" fetch="select">
+            <column name="Departamento_idDepartamento" />
+        </many-to-one>
+        <property name="idiomas" type="string">
+            <column name="idiomas" length="200" />
+        </property>
+        <property name="habilidades" type="string">
+            <column name="habilidades" length="45" />
+        </property>
+        <property name="sector" type="string">
+            <column name="sector" length="45" />
+        </property>
+        <property name="categoria" type="string">
+            <column name="categoria" length="45" />
+        </property>
+        <property name="rol" type="string">
+            <column name="rol" length="45" not-null="true" />
+        </property>
+        <property name="foto" type="binary">
+            <column name="foto" />
+        </property>
+        <property name="numeroSeguridadSocial" type="string">
+            <column name="numeroSeguridadSocial" length="20" />
+        </property>
+        <property name="codigoPostal" type="string">
+            <column name="codigoPostal" length="20" />
+        </property>
+        <property name="calle" type="string">
+            <column name="calle" length="45" />
+        </property>
+        <property name="numero" type="java.lang.Integer">
+            <column name="numero" />
+        </property>
+        <property name="pais" type="string">
+            <column name="pais" length="45" />
+        </property>
+        <property name="ciudad" type="string">
+            <column name="ciudad" length="45" />
+        </property>
+        <property name="poblacion" type="string">
+            <column name="poblacion" length="45" />
+        </property>
+        <property name="via" type="string">
+            <column name="via" length="45" />
+        </property>
+        <property name="escalera" type="string">
+            <column name="escalera" length="45" />
+        </property>
+        <property name="bloque" type="string">
+            <column name="bloque" length="45" />
+        </property>
+        <property name="provincia" type="string">
+            <column name="provincia" length="45" />
+        </property>
+        <property name="nombre" type="string">
+            <column name="nombre" length="45" />
+        </property>
+        <property name="primerApellido" type="string">
+            <column name="primerApellido" length="45" />
+        </property>
+        <property name="segundoApellido" type="string">
+            <column name="segundoApellido" length="45" />
+        </property>
+        <property name="fechaNacimiento" type="date">
+            <column name="fechaNacimiento" length="10" />
+        </property>
+        <property name="dni" type="string">
+            <column name="dni" length="20" not-null="true" unique="true" />
+        </property>
+        <property name="sexo" type="string">
+            <column name="sexo" length="45" />
+        </property>
+        <property name="correoElectronico" type="string">
+            <column name="correoElectronico" length="45" />
+        </property>
+        <property name="telefonoMovil" type="string">
+            <column name="telefonoMovil" length="10" />
+        </property>
+        <property name="telefonoFijo" type="string">
+            <column name="telefonoFIjo" length="45" />
+        </property>
+        <property name="discapacitado" type="java.lang.Boolean">
+            <column name="discapacitado" />
+        </property>
+        <property name="usuario" type="string">
+            <column name="usuario" length="45" not-null="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="45" not-null="true" unique="true" />
+        </property>
+        <set name="partesForEmpleadoIdEmpleadoCierra" table="parte" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Empleado_idEmpleado_cierra" />
+            </key>
+            <one-to-many class="dam.gestionhotelera.modelo.Pojos.Parte" />
+        </set>
+        <set name="departamentos" table="departamento" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Empleado_idEmpleado_jefe" />
+            </key>
+            <one-to-many class="dam.gestionhotelera.modelo.Pojos.Departamento" />
+        </set>
+        <set name="reservas" table="reserva" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Empleado_idEmpleado" not-null="true" />
+            </key>
+            <one-to-many class="dam.gestionhotelera.modelo.Pojos.Reserva" />
+        </set>
+        <set name="diatrabajos" table="diatrabajo" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Empleado_idEmpleado" not-null="true" />
+            </key>
+            <one-to-many class="dam.gestionhotelera.modelo.Pojos.Diatrabajo" />
+        </set>
+        <set name="contratos" table="contrato" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Empleado_idEmpleado" not-null="true" />
+            </key>
+            <one-to-many class="dam.gestionhotelera.modelo.Pojos.Contrato" />
+        </set>
+        <set name="partesForEmpleadoIdEmpleadoAbre" table="parte" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Empleado_idEmpleado_abre" not-null="true" />
+            </key>
+            <one-to-many class="dam.gestionhotelera.modelo.Pojos.Parte" />
+        </set>
+        <set name="parteTieneEmpleados" table="parte_tiene_empleado" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Empleado_idEmpleado" not-null="true" />
+            </key>
+            <one-to-many class="dam.gestionhotelera.modelo.Pojos.ParteTieneEmpleado" />
+        </set>
+    </class>
+</hibernate-mapping>

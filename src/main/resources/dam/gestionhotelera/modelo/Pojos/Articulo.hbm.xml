@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-dic-2017 19:12:03 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="dam.gestionhotelera.modelo.Pojos.Articulo" table="articulo" catalog="hotel" optimistic-lock="version">
+        <id name="idArticulo" type="java.lang.Integer">
+            <column name="idArticulo" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="departamento" class="dam.gestionhotelera.modelo.Pojos.Departamento" fetch="select">
+            <column name="Departamento_idDepartamento" not-null="true" />
+        </many-to-one>
+        <many-to-one name="factura" class="dam.gestionhotelera.modelo.Pojos.Factura" fetch="select">
+            <column name="factura_idFactura" not-null="true" />
+        </many-to-one>
+        <many-to-one name="proveedores" class="dam.gestionhotelera.modelo.Pojos.Proveedores" fetch="select">
+            <column name="Proveedores_idProveedores" />
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="nombre" length="45" />
+        </property>
+        <property name="concepto" type="string">
+            <column name="concepto" length="45" />
+        </property>
+        <property name="precio" type="java.lang.Double">
+            <column name="precio" precision="22" scale="0" />
+        </property>
+        <property name="foto" type="binary">
+            <column name="foto" />
+        </property>
+        <property name="categoria" type="string">
+            <column name="categoria" length="45" />
+        </property>
+        <property name="codigo" type="string">
+            <column name="codigo" length="45" />
+        </property>
+        <property name="suministrado" type="java.lang.Boolean">
+            <column name="suministrado" />
+        </property>
+        <set name="ofertas" table="oferta" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Articulo_idArticulo" />
+            </key>
+            <one-to-many class="dam.gestionhotelera.modelo.Pojos.Oferta" />
+        </set>
+    </class>
+</hibernate-mapping>

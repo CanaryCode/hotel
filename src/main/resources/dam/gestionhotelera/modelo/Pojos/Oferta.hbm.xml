@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-dic-2017 19:12:03 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="dam.gestionhotelera.modelo.Pojos.Oferta" table="oferta" catalog="hotel" optimistic-lock="version">
+        <id name="idOferta" type="java.lang.Integer">
+            <column name="idOferta" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="articulo" class="dam.gestionhotelera.modelo.Pojos.Articulo" fetch="select">
+            <column name="Articulo_idArticulo" />
+        </many-to-one>
+        <property name="precio" type="java.lang.Double">
+            <column name="precio" precision="22" scale="0" />
+        </property>
+        <property name="descuento" type="java.lang.Double">
+            <column name="descuento" precision="22" scale="0" />
+        </property>
+        <property name="fechaInicio" type="timestamp">
+            <column name="fechaInicio" length="19" />
+        </property>
+        <property name="clientePersonaDni" type="string">
+            <column name="Cliente_Persona_Dni" length="20" />
+        </property>
+        <property name="empleadoPersonaDni" type="string">
+            <column name="Empleado_Persona_Dni" length="20" />
+        </property>
+        <property name="fechaFin" type="timestamp">
+            <column name="fechaFin" length="19" />
+        </property>
+        <property name="concepto" type="string">
+            <column name="concepto" length="45" />
+        </property>
+        <property name="categoria" type="string">
+            <column name="categoria" length="45" />
+        </property>
+        <set name="parteTieneOfertas" table="parte_tiene_oferta" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Oferta_idOferta" not-null="true" />
+            </key>
+            <one-to-many class="dam.gestionhotelera.modelo.Pojos.ParteTieneOferta" />
+        </set>
+        <set name="facturas" table="factura" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Oferta_idOferta" />
+            </key>
+            <one-to-many class="dam.gestionhotelera.modelo.Pojos.Factura" />
+        </set>
+        <set name="reservas" table="reserva" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Oferta_idOferta" />
+            </key>
+            <one-to-many class="dam.gestionhotelera.modelo.Pojos.Reserva" />
+        </set>
+        <set name="ofertaTieneEmpresas" table="oferta_tiene_empresa" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Oferta_idOferta" not-null="true" />
+            </key>
+            <one-to-many class="dam.gestionhotelera.modelo.Pojos.OfertaTieneEmpresa" />
+        </set>
+    </class>
+</hibernate-mapping>

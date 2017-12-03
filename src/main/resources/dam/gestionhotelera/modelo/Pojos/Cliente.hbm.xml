@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-dic-2017 19:12:03 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="dam.gestionhotelera.modelo.Pojos.Cliente" table="cliente" catalog="hotel" optimistic-lock="version">
+        <id name="idCliente" type="java.lang.Integer">
+            <column name="idCliente" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="reserva" class="dam.gestionhotelera.modelo.Pojos.Reserva" fetch="select">
+            <column name="Reserva_idReserva" />
+        </many-to-one>
+        <property name="fechaExpedicionPasaporte" type="date">
+            <column name="fechaExpedicionPasaporte" length="10" />
+        </property>
+        <property name="fechaVencimientoPasaporte" type="date">
+            <column name="fechaVencimientoPasaporte" length="10" />
+        </property>
+        <property name="categoria" type="string">
+            <column name="categoria" length="45" />
+        </property>
+        <property name="puntos" type="java.lang.Double">
+            <column name="puntos" precision="22" scale="0" />
+        </property>
+        <property name="turno" type="string">
+            <column name="turno" length="45" />
+        </property>
+        <property name="pension" type="string">
+            <column name="pension" length="45" />
+        </property>
+        <property name="estatus" type="string">
+            <column name="estatus" length="45" />
+        </property>
+        <property name="codigoPostal" type="string">
+            <column name="codigoPostal" length="20" />
+        </property>
+        <property name="calle" type="string">
+            <column name="calle" length="45" />
+        </property>
+        <property name="numero" type="java.lang.Integer">
+            <column name="numero" />
+        </property>
+        <property name="pais" type="string">
+            <column name="pais" length="45" />
+        </property>
+        <property name="ciudad" type="string">
+            <column name="ciudad" length="45" />
+        </property>
+        <property name="poblacion" type="string">
+            <column name="poblacion" length="45" />
+        </property>
+        <property name="via" type="string">
+            <column name="via" length="45" />
+        </property>
+        <property name="escalera" type="string">
+            <column name="escalera" length="45" />
+        </property>
+        <property name="bloque" type="string">
+            <column name="bloque" length="45" />
+        </property>
+        <property name="provincia" type="string">
+            <column name="provincia" length="45" />
+        </property>
+        <property name="nombre" type="string">
+            <column name="nombre" length="45" not-null="true" />
+        </property>
+        <property name="primerApellido" type="string">
+            <column name="primerApellido" length="45" />
+        </property>
+        <property name="segundoApellido" type="string">
+            <column name="segundoApellido" length="45" />
+        </property>
+        <property name="fechaNacimiento" type="date">
+            <column name="fechaNacimiento" length="10" />
+        </property>
+        <property name="dni" type="string">
+            <column name="dni" length="20" not-null="true" unique="true" />
+        </property>
+        <property name="sexo" type="string">
+            <column name="sexo" length="45" />
+        </property>
+        <property name="correoElectronico" type="string">
+            <column name="correoElectronico" length="45" />
+        </property>
+        <property name="telefonoMovil" type="string">
+            <column name="telefonoMovil" length="10" />
+        </property>
+        <property name="telefonoFijo" type="string">
+            <column name="telefonoFIjo" length="45" />
+        </property>
+        <property name="discapacitado" type="java.lang.Boolean">
+            <column name="discapacitado" />
+        </property>
+        <property name="categoriaSegunAgencia" type="string">
+            <column name="categoriaSegunAgencia" length="45" />
+        </property>
+        <set name="mesaTieneClientes" table="mesa_tiene_cliente" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="cliente_idCliente" not-null="true" />
+            </key>
+            <one-to-many class="dam.gestionhotelera.modelo.Pojos.MesaTieneCliente" />
+        </set>
+        <set name="facturas" table="factura" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Cliente_idCliente" />
+            </key>
+            <one-to-many class="dam.gestionhotelera.modelo.Pojos.Factura" />
+        </set>
+        <set name="parteTieneClientes" table="parte_tiene_cliente" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Cliente_idCliente" not-null="true" />
+            </key>
+            <one-to-many class="dam.gestionhotelera.modelo.Pojos.ParteTieneCliente" />
+        </set>
+        <set name="habitacionTieneClientes" table="habitacion_tiene_cliente" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="cliente_idCliente" not-null="true" />
+            </key>
+            <one-to-many class="dam.gestionhotelera.modelo.Pojos.HabitacionTieneCliente" />
+        </set>
+    </class>
+</hibernate-mapping>

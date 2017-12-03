@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-dic-2017 19:12:03 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="dam.gestionhotelera.modelo.Pojos.Agencia" table="agencia" catalog="hotel" optimistic-lock="version">
+        <id name="idAgencia" type="java.lang.Integer">
+            <column name="id_Agencia" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="empresa" class="dam.gestionhotelera.modelo.Pojos.Empresa" fetch="select">
+            <column name="Empresa_idEmpresa" not-null="true" />
+        </many-to-one>
+        <property name="responsable" type="string">
+            <column name="responsable" length="45" />
+        </property>
+        <property name="categoria" type="string">
+            <column name="categoria" length="45" />
+        </property>
+        <property name="estatus" type="string">
+            <column name="estatus" length="45" />
+        </property>
+        <set name="reservas" table="reserva" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Agencia_id_Agencia" not-null="true" />
+            </key>
+            <one-to-many class="dam.gestionhotelera.modelo.Pojos.Reserva" />
+        </set>
+    </class>
+</hibernate-mapping>

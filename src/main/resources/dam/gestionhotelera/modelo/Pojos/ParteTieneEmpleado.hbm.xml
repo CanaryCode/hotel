@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-dic-2017 19:12:03 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="dam.gestionhotelera.modelo.Pojos.ParteTieneEmpleado" table="parte_tiene_empleado" catalog="hotel" optimistic-lock="version">
+        <composite-id name="id" class="dam.gestionhotelera.modelo.Pojos.ParteTieneEmpleadoId">
+            <key-property name="empleadoIdEmpleado" type="int">
+                <column name="Empleado_idEmpleado" />
+            </key-property>
+            <key-property name="parteIdparte" type="int">
+                <column name="parte_idparte" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="empleado" class="dam.gestionhotelera.modelo.Pojos.Empleado" update="false" insert="false" fetch="select">
+            <column name="Empleado_idEmpleado" not-null="true" />
+        </many-to-one>
+        <many-to-one name="parte" class="dam.gestionhotelera.modelo.Pojos.Parte" update="false" insert="false" fetch="select">
+            <column name="parte_idparte" not-null="true" />
+        </many-to-one>
+        <property name="fechaInicio" type="timestamp">
+            <column name="fechaInicio" length="19" />
+        </property>
+        <property name="fechaFin" type="timestamp">
+            <column name="fechaFin" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

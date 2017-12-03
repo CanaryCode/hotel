@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-dic-2017 19:12:03 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="dam.gestionhotelera.modelo.Pojos.ParteTieneOferta" table="parte_tiene_oferta" catalog="hotel" optimistic-lock="version">
+        <id name="idparteTieneOferta" type="java.lang.Integer">
+            <column name="idparte_tiene_oferta" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="oferta" class="dam.gestionhotelera.modelo.Pojos.Oferta" fetch="select">
+            <column name="Oferta_idOferta" not-null="true" />
+        </many-to-one>
+        <many-to-one name="parte" class="dam.gestionhotelera.modelo.Pojos.Parte" fetch="select">
+            <column name="parte_idparte" not-null="true" />
+        </many-to-one>
+        <property name="fechaInicio" type="timestamp">
+            <column name="fechaInicio" length="19" />
+        </property>
+        <property name="fechaFin" type="timestamp">
+            <column name="fechaFin" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

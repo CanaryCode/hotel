@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-dic-2017 19:12:03 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="dam.gestionhotelera.modelo.Pojos.Parte" table="parte" catalog="hotel" optimistic-lock="version">
+        <id name="idparte" type="java.lang.Integer">
+            <column name="idparte" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="empleadoByEmpleadoIdEmpleadoCierra" class="dam.gestionhotelera.modelo.Pojos.Empleado" fetch="select">
+            <column name="Empleado_idEmpleado_cierra" />
+        </many-to-one>
+        <many-to-one name="empleadoByEmpleadoIdEmpleadoAbre" class="dam.gestionhotelera.modelo.Pojos.Empleado" fetch="select">
+            <column name="Empleado_idEmpleado_abre" not-null="true" />
+        </many-to-one>
+        <property name="comentario" type="string">
+            <column name="comentario" length="500" />
+        </property>
+        <property name="concepto" type="string">
+            <column name="concepto" length="45" />
+        </property>
+        <property name="categoria" type="string">
+            <column name="categoria" length="45" />
+        </property>
+        <property name="grado" type="string">
+            <column name="grado" length="45" />
+        </property>
+        <set name="parteTieneEmpresas" table="parte_tiene_empresa" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="parte_idparte" not-null="true" />
+            </key>
+            <one-to-many class="dam.gestionhotelera.modelo.Pojos.ParteTieneEmpresa" />
+        </set>
+        <set name="parteTieneEmpleados" table="parte_tiene_empleado" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="parte_idparte" not-null="true" />
+            </key>
+            <one-to-many class="dam.gestionhotelera.modelo.Pojos.ParteTieneEmpleado" />
+        </set>
+        <set name="parteTieneDepartamentos" table="parte_tiene_departamento" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="parte_idparte" not-null="true" />
+            </key>
+            <one-to-many class="dam.gestionhotelera.modelo.Pojos.ParteTieneDepartamento" />
+        </set>
+        <set name="parteTieneClientes" table="parte_tiene_cliente" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="parte_idparte" not-null="true" />
+            </key>
+            <one-to-many class="dam.gestionhotelera.modelo.Pojos.ParteTieneCliente" />
+        </set>
+        <set name="parteTieneOfertas" table="parte_tiene_oferta" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="parte_idparte" not-null="true" />
+            </key>
+            <one-to-many class="dam.gestionhotelera.modelo.Pojos.ParteTieneOferta" />
+        </set>
+        <set name="parteTieneProveedoreses" table="parte_tiene_proveedores" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="parte_idparte" not-null="true" />
+            </key>
+            <one-to-many class="dam.gestionhotelera.modelo.Pojos.ParteTieneProveedores" />
+        </set>
+        <set name="parteTieneContratos" table="parte_tiene_contrato" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="parte_idparte" not-null="true" />
+            </key>
+            <one-to-many class="dam.gestionhotelera.modelo.Pojos.ParteTieneContrato" />
+        </set>
+        <set name="parteTieneReservas" table="parte_tiene_reserva" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="parte_idparte" not-null="true" />
+            </key>
+            <one-to-many class="dam.gestionhotelera.modelo.Pojos.ParteTieneReserva" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-dic-2017 19:12:03 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="dam.gestionhotelera.modelo.Pojos.MesaTieneCliente" table="mesa_tiene_cliente" catalog="hotel" optimistic-lock="version">
+        <composite-id name="id" class="dam.gestionhotelera.modelo.Pojos.MesaTieneClienteId">
+            <key-property name="mesaIdMesa" type="int">
+                <column name="mesa_idMesa" />
+            </key-property>
+            <key-property name="clienteIdCliente" type="int">
+                <column name="cliente_idCliente" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="cliente" class="dam.gestionhotelera.modelo.Pojos.Cliente" update="false" insert="false" fetch="select">
+            <column name="cliente_idCliente" not-null="true" />
+        </many-to-one>
+        <many-to-one name="mesa" class="dam.gestionhotelera.modelo.Pojos.Mesa" update="false" insert="false" fetch="select">
+            <column name="mesa_idMesa" not-null="true" />
+        </many-to-one>
+        <property name="fechaInicio" type="timestamp">
+            <column name="fechaInicio" length="19" />
+        </property>
+        <property name="fechaFin" type="timestamp">
+            <column name="fechaFin" length="19" />
+        </property>
+        <property name="desayuno" type="java.lang.Boolean">
+            <column name="desayuno" />
+        </property>
+        <property name="almuerzo" type="java.lang.Boolean">
+            <column name="almuerzo" />
+        </property>
+        <property name="cena" type="java.lang.Boolean">
+            <column name="cena" />
+        </property>
+    </class>
+</hibernate-mapping>

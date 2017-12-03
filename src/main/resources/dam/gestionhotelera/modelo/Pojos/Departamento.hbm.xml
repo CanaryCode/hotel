@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-dic-2017 19:12:03 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="dam.gestionhotelera.modelo.Pojos.Departamento" table="departamento" catalog="hotel" optimistic-lock="version">
+        <id name="idDepartamento" type="java.lang.Integer">
+            <column name="idDepartamento" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="empleado" class="dam.gestionhotelera.modelo.Pojos.Empleado" fetch="select">
+            <column name="Empleado_idEmpleado_jefe" />
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="nombre" length="25" />
+        </property>
+        <set name="empleados" table="empleado" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Departamento_idDepartamento" />
+            </key>
+            <one-to-many class="dam.gestionhotelera.modelo.Pojos.Empleado" />
+        </set>
+        <set name="parteTieneDepartamentos" table="parte_tiene_departamento" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Departamento_idDepartamento" not-null="true" />
+            </key>
+            <one-to-many class="dam.gestionhotelera.modelo.Pojos.ParteTieneDepartamento" />
+        </set>
+        <set name="articulos" table="articulo" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Departamento_idDepartamento" not-null="true" />
+            </key>
+            <one-to-many class="dam.gestionhotelera.modelo.Pojos.Articulo" />
+        </set>
+    </class>
+</hibernate-mapping>
