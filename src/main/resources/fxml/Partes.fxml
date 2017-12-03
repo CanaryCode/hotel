@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="586.0" prefWidth="503.0" stylesheets="@../styles/estilo.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dam.gestionhotelera.controladores.ControladorParte">
+   <children>
+      <TextArea layoutX="26.0" layoutY="258.0" prefHeight="142.0" prefWidth="463.0" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+         <effect>
+            <DropShadow color="#ffffff7c" height="2.97" radius="16.6125" width="65.48" />
+         </effect>
+      </TextArea>
+      <GridPane layoutX="26.0" layoutY="60.0" prefHeight="120.0" prefWidth="337.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="207.0" minWidth="10.0" prefWidth="106.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="357.0" minWidth="10.0" prefWidth="357.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label styleClass="normal" text="Dirigido a:" />
+            <Label styleClass="normal" text="Concepto:" GridPane.rowIndex="3" />
+            <Label styleClass="normal" text="Categoría:" GridPane.rowIndex="1" />
+            <Label styleClass="normal" text="Grado:" GridPane.rowIndex="2" />
+            <ComboBox fx:id="comboBoxDirigido" prefHeight="25.0" prefWidth="364.0" promptText="Obligatorio" GridPane.columnIndex="1" />
+            <ComboBox fx:id="comboBoxCategoría" prefHeight="25.0" prefWidth="364.0" promptText="Obligatorio" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ComboBox fx:id="comboBoxGrado" prefHeight="25.0" prefWidth="364.0" promptText="Obligatorio" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="textFieldConcepto" promptText="Obligatorio" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+      <HBox layoutX="383.0" layoutY="155.0" AnchorPane.rightAnchor="20.0" />
+      <Button id="button" layoutX="202.0" layoutY="539.0" mnemonicParsing="false" styleClass="button2" text="Generar" />
+      <Label layoutX="16.0" layoutY="349.0" styleClass="normal" text="Comentario:" AnchorPane.leftAnchor="20.0" />
+      <ListView layoutX="18.0" layoutY="180.0" prefHeight="155.0" prefWidth="149.0" AnchorPane.leftAnchor="20.0" />
+      <Button layoutX="199.0" layoutY="302.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="106.0" styleClass="button2" text="Borrar">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="197.0" layoutY="241.0" mnemonicParsing="false" styleClass="button2" text="&lt;&lt;Quitar">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="194.0" layoutY="180.0" mnemonicParsing="false" styleClass="button2" text="Añadir &gt;&gt;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <ListView layoutX="336.0" layoutY="180.0" prefHeight="155.0" prefWidth="149.0" AnchorPane.rightAnchor="20.0" />
+      <Label layoutX="20.0" layoutY="145.0" styleClass="normal" text="Lista de destinatario/s:" AnchorPane.leftAnchor="20.0" />
+      <Label layoutX="425.0" layoutY="145.0" styleClass="normal" text="Destinatario/s:" AnchorPane.rightAnchor="20.0" />
+   </children>
+</AnchorPane>
