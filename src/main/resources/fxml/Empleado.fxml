@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="605.0" prefWidth="782.0" styleClass="mainFxmlClass" stylesheets="@../styles/estilo.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dam.gestionhotelera.controladores.ControladorEmpleado">
+   <children>
+      <HBox layoutX="308.0" layoutY="552.0" AnchorPane.bottomAnchor="20.0">
+         <children>
+            <Button layoutX="308.0" layoutY="552.0" mnemonicParsing="false" styleClass="button2" text="Eliminar" />
+            <Button layoutX="398.0" layoutY="376.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="112.0" styleClass="button2" text="Introducir" AnchorPane.bottomAnchor="20.0" />
+            <Button layoutX="516.0" layoutY="552.0" mnemonicParsing="false" styleClass="button2" text="Modificar" />
+         </children>
+      </HBox>
+      <GridPane layoutX="340.0" layoutY="64.0" AnchorPane.topAnchor="20.0">
+         <children>
+            <Label styleClass="normal" text="Calle:" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label styleClass="normal" text="Bloque:" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label styleClass="normal" text="Escalera:" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Label styleClass="normal" text="Via:" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Label styleClass="normal" text="Número:" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label styleClass="normal" text="Provincia:" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label styleClass="normal" text="Ciudad" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="textFieldProvincia" promptText="Recomendado" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <TextField fx:id="textFieldEscalera" promptText="Opcional" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+            <TextField fx:id="textFieldBloque" promptText="Opcional" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+            <TextField fx:id="textFieldCalle" promptText="Recomendado" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <TextField fx:id="textFieldCiudad" promptText="Obligatorio" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <TextField fx:id="textFieldVia" promptText="Opcional" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+            <Label styleClass="normal" text="País:" GridPane.columnIndex="1" />
+            <Label styleClass="normal" text="Código postal:" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="textFieldCodigoPostal" promptText="Obligatorio" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="textFieldNumero" promptText="Recomendado" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <ComboBox fx:id="comboBoxPaises" prefWidth="150.0" promptText="Obligatorio" GridPane.columnIndex="2" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints hgrow="SOMETIMES" />
+            <ColumnConstraints hgrow="SOMETIMES" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <GridPane layoutX="30.0" layoutY="64.0" prefHeight="390.0" prefWidth="291.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+         <children>
+            <Label styleClass="normal" text="S. Apellido:" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label styleClass="normal" text="Tel. Fijo:" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label styleClass="normal" text="Tel. Móvil:" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Label styleClass="normal" text="Departamento:" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <Label styleClass="normal" text="Email" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Label styleClass="normal" text="F. Nacimiento:" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label styleClass="normal" text="Rol:" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+            <Label styleClass="normal" text="Sector:" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+            <Label styleClass="normal" text="Nombre:" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label styleClass="normal" text="P. Apellido:" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="textFieldNombre" promptText="Obligatorio" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="textFieldTelMovil" promptText="Recomendado" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+            <TextField fx:id="textFieldTelFijo" promptText="Recomendado" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+            <TextField fx:id="textFieldSegundoApellido" promptText="Recomendado" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <TextField fx:id="textFieldPrimerApellido" promptText="Obligatorio" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <TextField fx:id="textFieldNumReserva" promptText="Opcional" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+            <DatePicker prefHeight="25.0" prefWidth="200.0" promptText="Obligatorio" GridPane.columnIndex="2" GridPane.rowIndex="5">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </DatePicker>
+            <TextField fx:id="textFieldDni" promptText="Obligatorio" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Label styleClass="normal" text="Dni:" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ComboBox fx:id="comboBoxCategoria" prefHeight="25.0" prefWidth="200.0" promptText="Obligatorio" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+            <ComboBox fx:id="comboBoxPension" prefHeight="25.0" prefWidth="200.0" promptText="Obligatorio" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+            <Label styleClass="normal" text="Sexo:" GridPane.columnIndex="1" />
+            <HBox GridPane.columnIndex="2">
+               <children>
+                  <RadioButton mnemonicParsing="false" prefHeight="20.0" prefWidth="69.0" selected="true" text="H" GridPane.columnIndex="2">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="sexo" />
+                     </toggleGroup>
+                     <HBox.margin>
+                        <Insets right="60.0" />
+                     </HBox.margin>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" text="M" toggleGroup="$sexo" GridPane.columnIndex="2" />
+               </children>
+            </HBox>
+            <ComboBox fx:id="comboBoxHabitacion" prefHeight="25.0" prefWidth="200.0" promptText="Obligatorio" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+            <Label styleClass="normal" text="Discapacitado:" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+            <HBox prefHeight="34.0" prefWidth="137.0" GridPane.columnIndex="2" GridPane.rowIndex="12">
+               <children>
+                  <RadioButton mnemonicParsing="false" text="si" GridPane.columnIndex="2">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="discapacitado" />
+                     </toggleGroup>
+                     <HBox.margin>
+                        <Insets right="60.0" />
+                     </HBox.margin>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" selected="true" text="no" toggleGroup="$discapacitado" GridPane.columnIndex="2" />
+               </children>
+            </HBox>
+            <TextField fx:id="textFieldNombre1" promptText="Obligatorio" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="96.0" prefWidth="96.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="191.0" prefWidth="195.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <VBox layoutX="340.0" layoutY="297.0">
+         <children>
+            <Label layoutX="340.0" layoutY="297.0" styleClass="normal" text="Habilidades:">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Label>
+            <TextArea layoutX="346.0" layoutY="327.0" prefHeight="113.0" prefWidth="240.0" promptText="Opcional" />
+         </children>
+      </VBox>
+      <VBox layoutX="27.0" layoutY="418.0" prefHeight="167.0" prefWidth="291.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="27.0">
+         <children>
+            <HBox prefHeight="34.0" prefWidth="275.0">
+               <children>
+                  <Label styleClass="normal" text="Idiomas:">
+                     <HBox.margin>
+                        <Insets right="160.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label styleClass="normal" text="Hablados:" />
+               </children>
+            </HBox>
+            <HBox prefHeight="140.0" prefWidth="267.0">
+               <children>
+                  <ListView prefHeight="138.0" prefWidth="100.0" />
+                  <VBox prefHeight="138.0" prefWidth="80.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" styleClass="boton" text="Añadir&gt;&gt;">
+                           <VBox.margin>
+                              <Insets bottom="24.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" styleClass="boton" text="&lt;&lt;Quitar">
+                           <VBox.margin>
+                              <Insets bottom="24.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" styleClass="boton" text="Borrar" />
+                     </children>
+                  </VBox>
+                  <ListView prefHeight="138.0" prefWidth="100.0" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox layoutX="622.0" layoutY="20.0" prefHeight="505.0" prefWidth="150.0" AnchorPane.bottomAnchor="80.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+         <children>
+            <HBox prefHeight="140.0" prefWidth="179.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../images/descarga.jpg" />
+                     </image>
+                     <HBox.margin>
+                        <Insets bottom="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+            </HBox>
+            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" styleClass="boton" text="Añadir/Modificar" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
