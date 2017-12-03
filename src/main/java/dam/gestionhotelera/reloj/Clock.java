@@ -17,7 +17,6 @@ import javafx.stage.*;
     It's main purpose is to demonstrate various features of JavaFX. */
 public class Clock extends Application {
     private LocalDateTime fechaHora;
-    
     Reloj reloj = new Reloj();
     
   public static void main(String[] args) throws Exception { launch(args); }
@@ -25,13 +24,8 @@ public class Clock extends Application {
 
     // layout the scene.
     final VBox layout = reloj.getReloj();
-    
     final Scene scene = new Scene(layout, Color.TRANSPARENT);
-   // scene.getStylesheets().add(getClass().getResource("estilo.css").toExternalForm());
     stage.setScene(scene);
-
-    
-    // show the scene.
     stage.show();
   }
 
