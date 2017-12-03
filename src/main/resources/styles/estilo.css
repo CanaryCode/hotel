@@ -1,0 +1,282 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 07-abr-2017, 7:26:34
+    Author     : Antonio jesús, Pérez Delgado
+*/
+
+#AnchorPane{
+    -fx-background-image:url(../images/dark.jpg);
+    -fx-background-position: center;
+    
+    /*    -fx-background-size: cover;*/
+
+}
+#menu, tab{
+    -fx-background-image:url(../images/dark.jpg);
+    -fx-text-fill: white;
+    -fx-opacity: 0.9;
+   
+}
+.menu-bar .label {
+    -fx-font-size: 10pt;
+    -fx-text-fill: white;
+    -fx-opacity: 0.9;
+    -fx-cursor:hand;
+}
+.menu .left-container {
+    -fx-background-color: black;
+}
+.context-menu, .tab, .combo-box,.combo-box-popup .list-cell{
+    -fx-text-fill: white;
+    -fx-background-color: derive(#1d1d1d,50%);
+    -fx-cursor:hand;
+}
+.combo-box,.combo-box-popup .list-cell{
+     -fx-background-color: white;
+      -fx-cursor:hand;
+       -fx-text-fill: black;
+}
+.menu-item .label,.combo-box .cell:selected{
+    -fx-text-fill: white;
+}
+.combo-box .cell:selected{
+     -fx-text-fill: black;
+}
+#ribbonLabel{
+    -fx-graphic:url(../images/parte.png);
+    -fx-alignment:BOTTOM_CENTER;
+    -fx-content-display:top;
+    -fx-text-fill: white;
+    -fx-opacity: 0.9;
+    -fx-border-color: #ffffff;
+    -fx-border-radius: 10;
+}
+#ribbonLabel:hover{
+    -fx-graphic:url(../images/agenda.png);
+    -fx-background-color: #329fe6
+}
+#ribbonLabel:pressed{
+    -fx-graphic:url(../images/parte.png);
+}
+#ribbonLabel2{
+    -fx-graphic:url(../images/pedido.png);
+    -fx-alignment:BOTTOM_CENTER;
+    -fx-content-display:top;
+    -fx-text-fill: white;
+    -fx-opacity: 0.9;
+    -fx-border-color: #ffffff;
+    -fx-border-radius: 10;
+
+}
+#ribbonLabel2:hover{
+    -fx-graphic:url(../images/pedidoGrande.png);
+    -fx-background-color:#329fe6
+}
+#ribbonLabel2:pressed{
+    -fx-graphic:url(../images/pedido.png);
+}
+#ribbonLabel3{
+    -fx-graphic:url(../images/calculadora.png);
+    -fx-alignment:BOTTOM_CENTER;
+    -fx-content-display:top;
+    -fx-text-fill: white;
+    -fx-opacity: 0.9;
+    -fx-border-color: #ffffff;
+    -fx-border-radius: 10;
+}
+#ribbonLabel3:hover{
+    -fx-graphic:url(../images/calculadoraGrande.png);
+    -fx-background-color:#329fe6
+}
+#ribbonLabel3:pressed{
+    -fx-graphic:url(../images/calculadora.png);
+}
+#ribbonLabel4{
+    -fx-graphic:url(../images/chat.png);
+    -fx-alignment:BOTTOM_CENTER;
+    -fx-content-display:top;
+    -fx-text-fill: white;
+    -fx-opacity: 0.9;
+    -fx-border-color: #ffffff;
+    -fx-border-radius: 10;
+}
+#ribbonLabel4:hover{
+    -fx-graphic:url(../images/chatGrande.png);
+    -fx-background-color:#329fe6
+}
+#ribbonLabel4:pressed{
+    -fx-graphic:url(../images/chat.png);
+}
+#ribbonLabel5{
+    -fx-graphic:url(../images/vista.png);
+    -fx-alignment:BOTTOM_CENTER;
+    -fx-content-display:top;
+    -fx-text-fill: white;
+    -fx-opacity: 0.9;
+    -fx-border-color: #ffffff;
+    -fx-border-radius: 10;
+}
+#ribbonLabel5:hover{
+    -fx-graphic:url(../images/vistaGrande.png);
+    -fx-background-color:#329fe6
+}
+#ribbonLabel5:pressed{
+    -fx-graphic:url(../images/vista.png);
+}
+#userLabel{
+    -fx-alignment:BOTTOM_CENTER;
+    -fx-content-display:top;
+    -fx-text-fill: white;
+    -fx-opacity: 0.9;
+    
+}
+
+#stackPane{
+    -fx-background-image: url(../images/logoHotel.png);
+    -fx-opacity:0.05;
+    -fx-background-size: stretch;
+}
+#panelIzquierdo{
+     -fx-border-color: #ffffff;
+    -fx-border-radius: 10;
+}
+.titulo, .normal, .tab, .radio-button{
+     -fx-alignment:BOTTOM_CENTER;
+    -fx-content-display:top;
+    -fx-text-fill: white;
+    -fx-opacity: 0.9;
+    -fx-font-size: 20;
+}
+.normal, .tab, .radio-button{
+    -fx-font-size: 14;
+}
+
+.boton{
+    -fx-background-color: derive(#1d1d1d,50%);
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14;
+}
+.boton:hover, .tab:selected, .combo-box .cell:hover{
+     -fx-background-color:#329fe6;
+}
+.boton:pressed, .tab:pressed{
+    -fx-background-color:#3333ff
+}
+.button2 {
+    -fx-padding: 5 22 5 22;   
+    -fx-border-color: #e2e2e2;
+    -fx-border-width: 2;
+    -fx-background-radius: 0;
+    -fx-background-color: #1d1d1d;
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 11pt;
+    -fx-text-fill: #d8d8d8;
+    -fx-background-insets: 0 0 0 0, 0, 1, 2;
+
+}
+
+.button2:hover {
+    -fx-background-color: #3a3a3a;
+}
+
+.button2:pressed, .button:default:hover:pressed {
+  -fx-background-color: white;
+  -fx-text-fill: #1d1d1d;
+}
+
+.button2:focused {
+    -fx-border-color: white, white;
+    -fx-border-width: 1, 1;
+    -fx-border-style: solid, segments(1, 1);
+    -fx-border-radius: 0, 0;
+    -fx-border-insets: 1 1 1 1, 0;
+}
+
+.button2:disabled, .button:default:disabled {
+    -fx-opacity: 0.4;
+    -fx-background-color: #1d1d1d;
+    -fx-text-fill: white;
+}
+
+.button2:default {
+    -fx-background-color: -fx-focus-color;
+    -fx-text-fill: #ffffff;
+}
+
+.button2:default:hover{
+    -fx-background-color: derive(-fx-focus-color,30%);
+    -fx-cursor:hand;
+}
+.tab-label{
+    -fx-text-fill: white;
+ 
+}
+.tab-header-background{
+    -fx-background-color: black;
+    
+}
+.tab:hover {
+    -fx-cursor: hand;
+}
+.radio-button:hover, .combo-box:hover, .button2:hover{
+    -fx-cursor:hand;
+    
+}
+/*.combo-box{
+    -fx-background-color: white;
+    
+}*/
+#face {
+  -fx-fill: radial-gradient(radius 180%, #1d1d1d, derive(#1d1d1d, -90%), derive(#1d1d1d, 30%));
+  -fx-stroke: derive(white, -45%);
+  -fx-stroke-width: 5;
+  -fx-effect: dropshadow(three-pass-box, grey, 10, 0, 4, 4);
+}
+
+#brand {
+  -fx-font-size: 14px;
+  -fx-text-fill: white;
+
+}
+
+#hourHand {
+  -fx-stroke: darkslategray;
+  -fx-stroke-width: 4;
+  -fx-stroke-line-cap: round;
+}
+
+#minuteHand {
+  -fx-stroke: derive(darkslategray, -5%);
+  -fx-stroke-width: 3;
+  -fx-stroke-line-cap: round;
+}
+
+#secondHand {
+  -fx-stroke: derive(whitesmoke, -15%);
+  -fx-stroke-width: 2;
+  -fx-stroke-line-cap: round;
+}
+
+#spindle {
+  -fx-fill: derive(darkslategray, +5%);
+}
+
+#digitalClock {
+  -fx-font-size: 20px;
+  -fx-font-family: 'Courier New';
+  -fx-text-fill: white;
+  -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+.tick {
+  -fx-stroke: derive(white, -15%);
+  -fx-stroke-width: 3;
+  -fx-stroke-line-cap: round;
+}
+#raiz{
+    /*-fx-background-image: url(dark.jpg);*/
+}
