@@ -12,7 +12,6 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.*;
 
-
 /** Note that this clock does not keep perfect time, but is close. 
     It's main purpose is to demonstrate various features of JavaFX. */
 public class Clock extends Application {
