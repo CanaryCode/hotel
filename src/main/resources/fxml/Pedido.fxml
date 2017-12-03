@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="434.0" prefWidth="579.0" stylesheets="@../styles/estilo.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dam.gestionhotelera.controladores.ControladorPedido">
+   <children>
+      <ListView layoutX="20.0" layoutY="58.0" prefHeight="378.0" prefWidth="200.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="40.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ListView>
+      <Label layoutX="92.0" layoutY="21.0" styleClass="normal" text="Lista Articulos" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
+      <Label layoutX="363.0" layoutY="21.0" styleClass="normal" text="Lista Petición" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
+      <ListView layoutX="249.0" layoutY="58.0" prefHeight="378.0" prefWidth="200.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="40.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ListView>
+      <Button layoutX="232.0" layoutY="40.0" mnemonicParsing="false" styleClass="button2" text="Añadir &gt;&gt;" AnchorPane.topAnchor="40.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="235.0" layoutY="100.0" mnemonicParsing="false" styleClass="button2" text="&lt;&lt;Quitar" AnchorPane.topAnchor="100.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="237.0" layoutY="160.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="106.0" styleClass="button2" text="Borrar" AnchorPane.topAnchor="160.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="237.0" layoutY="217.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="106.0" styleClass="button2" text="Hacer" AnchorPane.topAnchor="217.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>
