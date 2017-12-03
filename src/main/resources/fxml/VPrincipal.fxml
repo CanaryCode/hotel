@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="534.0" prefWidth="1081.0" stylesheets="@../styles/estilo.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dam.gestionhotelera.controladores.ControladorVentanaPrincipal">
+   <children>
+      <MenuBar id="menu" prefHeight="25.0" prefWidth="612.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Archivo">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Recepción">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#abrirCheckIn" text="Check-in" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Reservas">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Administración">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Close" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Personal">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#abrirVentanaEmpleado" text="Empleado" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Dirección">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Close" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="SSTT">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Close" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Cocina">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Close" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Pisos">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Close" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Restaurante">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Close" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Bares">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Close" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Economato">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Animación">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Vigilancia">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Close" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Común">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Close" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <BorderPane layoutY="35.0" prefHeight="374.0" prefWidth="1074.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+         <top>
+            <GridPane prefHeight="50.0" prefWidth="612.0" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label id="ribbonLabel" onMouseClicked="#abrirVentanaParte" prefHeight="55.0" prefWidth="230.0" text="Emiitir Parte">
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding></Label>
+                  <Label id="ribbonLabel2" onMouseClicked="#abrirVentanaPedido" prefHeight="55.0" prefWidth="230.0" text="Pedido" GridPane.columnIndex="1">
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding></Label>
+                  <Label id="ribbonLabel3" onMouseClicked="#abrirVentanaCalculadora" prefHeight="55.0" prefWidth="230.0" text="Calculadora" GridPane.columnIndex="2">
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding></Label>
+                  <Label id="ribbonLabel4" onMouseClicked="#abrirVentanaChat" prefHeight="55.0" prefWidth="230.0" text="Chat" GridPane.columnIndex="3">
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding></Label>
+                  <Label id="ribbonLabel5" onMouseClicked="#abrirVentanaPlantas" prefHeight="55.0" prefWidth="230.0" text="Vista General" GridPane.columnIndex="4">
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding></Label>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </GridPane>
+         </top>
+         <right>
+            <VBox prefHeight="434.0" prefWidth="138.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox prefHeight="168.0" prefWidth="221.0">
+                     <children>
+                        <ImageView fitHeight="141.0" fitWidth="149.0" opacity="0.7" pickOnBounds="true">
+                           <image>
+                              <Image url="@../images/descarga.jpg" />
+                           </image>
+                           <effect>
+                              <Reflection bottomOpacity="0.04" fraction="0.33" topOpacity="0.22" />
+                           </effect>
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Label id="userLabel" prefHeight="56.0" prefWidth="186.0" text="nombre Usuario">
+                     <font>
+                        <Font name="Arial Narrow" size="22.0" />
+                     </font>
+                     <padding>
+                        <Insets top="30.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </VBox>
+         </right>
+         <center>
+            <Pane id="stackPane" prefHeight="434.0" prefWidth="726.0" BorderPane.alignment="CENTER" />
+         </center>
+         <left>
+            <AnchorPane prefHeight="434.0" prefWidth="168.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox prefHeight="384.0" prefWidth="222.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="-64.0" AnchorPane.topAnchor="30.0">
+                     <children>
+                        <AnchorPane fx:id="panelReloj" prefHeight="156.0" prefWidth="193.0" />
+                        <Label prefHeight="30.0" prefWidth="313.0" styleClass="titulo" text="Inicio sesión:">
+                           <VBox.margin>
+                              <Insets top="40.0" />
+                           </VBox.margin></Label>
+                        <Label fx:id="eticquetaFecha" prefHeight="20.0" prefWidth="241.0" styleClass="normal" text="Label" />
+                     </children>
+                     <opaqueInsets>
+                        <Insets bottom="10.0" />
+                     </opaqueInsets>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </left>
+      </BorderPane>
+   </children>
+</AnchorPane>
